@@ -6,6 +6,8 @@ import FormField from '../components/FormField';
 import Loader from '../components/Loader';
 import { toast } from 'react-toastify'; 
 import { downloadImage } from "../utils";
+import { API } from "../api";
+
 
 const CreatePost = () => {
   const navigate = useNavigate();
@@ -24,7 +26,8 @@ const CreatePost = () => {
       try {
         setGeneratingImg(true);
 
-        const response = await fetch('http://localhost:8080/api/v1/dalle', {
+     const response = await fetch('http://localhost:8080/api/v1/dalle', {
+
           method: 'POST',
           headers: {
             'Content-Type': 'application/json',
@@ -82,7 +85,8 @@ const CreatePost = () => {
       setLoading(true);
 
       try {
-        const response = await fetch('http://localhost:8080/api/v1/post', {
+  const response = await fetch(API.post, {
+
           method: 'POST',
           headers: {
             'Content-Type': 'application/json',
