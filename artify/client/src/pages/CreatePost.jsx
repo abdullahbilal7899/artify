@@ -26,7 +26,9 @@ const CreatePost = () => {
       try {
         setGeneratingImg(true);
 
-     const response = await fetch('http://localhost:8080/api/v1/dalle', {
+  const response = await fetch(API.dalle, {
+
+
 
           method: 'POST',
           headers: {
