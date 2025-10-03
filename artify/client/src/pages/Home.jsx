@@ -4,6 +4,8 @@ import Card from '../components/Card'
 import FormField from '../components/FormField'
 import Loader from '../components/Loader'
 import { toast } from 'react-toastify'
+import { API } from "../api";
+
 
 const RenderCards = ({ data, title }) => {
 
@@ -34,7 +36,7 @@ const Home = () => {
             setLoading(true)
 
             try {
-                const response = await fetch('http://localhost:8080/api/v1/post', {
+                const response = await fetch(API.post, {
                     method: 'GET',
                     headers: {
                         'Content-Type': 'application/json'
